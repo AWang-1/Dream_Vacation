@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script>
+  
+  //below is the location for Reykjavík, Iceland//
+  
+	function myMap() {
+	var myCenter = new google.maps.LatLng(64.1248677,-21.82261);
+  	//myCenter is a latitude/longitude (LatLng) object which stores a point//
+ 	 var mapCanvas = document.getElementById("googleMap");
+  	//mapCanvas stores the link to the div that the map will go in//
+  	var mapOptions = {center: 
+  	myCenter, 
+  	zoom: 3};
+ 	 //mapOptions stores the options for the map, note: we used myCenter, the variable storing
+ 	 //a point, in the center option//
+ 	 var map = new google.maps.Map(mapCanvas, mapOptions);
+  	//map creates the map itself, we gave it the variables for the mapCanvas (where to put it)
+ 	 //and the mapOptions (what it wil look like//
+  	var marker = new google.maps.Marker({position:myCenter});
+  	//marker creates a new marker at the myCenter location (we used the myCenter LatLng variable again//
+  	marker.setMap(map);
+ 	 //follows object.method notation
+ 	 //marker is the object, is being told to set its map to the map we created two lines up. This puts the marker
+ 	 //on the map//
+ 	 
+ 	 //END Reykjavík, Iceland
+ 	 
+ 	 var Glasgow = new google.maps.LatLng(55.8528693,-4.2448654,38691);
+ 	 var marker2= new google.maps.Marker({position:Glasgow});
+ 	 marker2.setMap(map);
+ 	
+ 	var Madrid = new google.maps.LatLng(40.4154831,-3.7079006);
+ 	var marker3 = new google.maps.Marker({position:Madrid});
+ 	marker3.setMap(map);
+
+	var Athens = new google.maps.LatLng(37.9841462,23.7283481);
+	var marker4 = new google.maps.Marker({position:Athens});
+	marker4.setMap(map);
+	
+	var Sentosa = new google.maps.LatLng(1.2479274,103.8289606);
+	var marker5 = new google.maps.Marker({position:Sentosa});
+	marker5.setMap(map);
+	
+	var Tokyo = new google.maps.LatLng(35.7088809,139.7309736);
+	var marker6 = new google.maps.Marker({position:Tokyo});
+	marker6.setMap(map);
+	
+	//second map for zoom on Reykjavík, Iceland
+	var IcelandCenter = new google.maps.LatLng(64.1248677,-21.82261);
+	 var mapCanvasIceland = document.getElementById("IcelandMap");
+	 var mapOptionsIceland = {center: 
+	 IcelandCenter,
+	 zoom:10,
+	  mapTypeId:google.maps.MapTypeId.HYBRID
+	 };
+	  var mapIceland = new google.maps.Map(mapCanvasIceland, mapOptionsIceland);
+	  
+	  
+	  
+	  var flightPath = new google.maps.Polyline({
+    path: [myCenter, Glasgow, Madrid, Athens, Sentosa, Tokyo],
+    //path: [myCenter, Tokyo, Madrid, Sentosa, Glasgow, Athens],
+    strokeColor: "#6600ff",
+    strokeOpacity: 0.8,
+    strokeWeight: 2
+  });
+  flightPath.setMap(map);
+} 
+google.maps.event.addDomListener(window, 'load', myMap);
+
+
+</script>
+</head>
+
+<body>
+<h1> Dream Vacation</h1>
+
+
+<div id="googleMap" style="width:1900px;height:1000px;"></div>
+<h1> Reykjav&iacute;k, Iceland</h1>
+<p> Reykjav&iacute;k is on the southwestern tip of Iceland, and is the capital and largest city.
+ It has a subpolar oceanic climate, but despite the northern latitude, the temperature very rarely drops below
+-15 degrees Celsius in the winter.
+ Locals tend to go out late, so bars that look quiet can fill up
+suddenly, usually after midnight on a weekend.
+It is also very common for an establishment that is a 
+caf&eacute; to become a bar during the evening. </p>
+<p>
+<div id="IcelandMap" style="width:500px;height:500px"></div>
+<h1>Glasgow, United Kingdom</h1>
+<p> Glasgow is the largest city in Scotland. 
+ Winters are cool and overcast, usually with a mean of
+5 degrees Celsius but sometimes falls below freezing.
+ The most extreme temperature instances have
+seen temperatures around -12 degrees Celsius, despite its northerly latitude, similar to
+Moscow's latitude.
+In the summer, the warmest month is usually July,
+with an average high above 20 degrees Celsius.
+Glasgow is a popular tourist attraction and also has
+sweet water. Glasgow is separated in different districts, such as the retail and
+theater district, merchant city, financial district, west end, and east end. There is a
+wide range of cultural activities, and also a large selection of museums to visit.</p>
+<p><img src="Glasgow-Cathedral-995.jpg" style="width:600px"></p>
+<h1>Madrid, Spain</h1>
+<p>Madrid is the capital of Spain, and is also where the Madrid protocol was signed. It is
+the third largest city in the EU, and its metropolitan area is the third largest. It also
+houses the headquarters of the World Tourism Organization. The Madrid 
+region is a mix of a cold semi-arid climate that borders on a hot summer Mediterranean climate.
+The warmest month of the summer is July, with average temperatures ranging from 32-33 Celsius
+depending on the location. During city heatwaves, the temperature can occasionally get over 35
+degrees Celsius.</p>
+<p><img src="palacioreal_2016.1440_4.jpg" style="width:700px"></p>
+<h1> Athens, Greece</h1>
+<p> Athens is the largest city and is the capital of Greece. It is one of the biggest economic 
+centers in southeast Europe, and is recognized as a global city.
+ This city is a world center for architectural research, with many architectural museums and 
+ national institutions. People move about Athens using either bus lines, Metros, railways and 
+ motorways. The city is divided into smaller districts, each with their own types of 
+ neighborhoods. Athens incorporates architectural styles ranging from Greco-Roman and Neoclassical
+ to modern. </p>
+<p><img src="monastiraki_photo Y Skoulas_510.jpg" style="width:600px"></p>
+<h1> Sentosa, Singapore</h1>
+<p> Sentosa is a popular island resort off the coast of Singapore, an island by the tip of 
+Malaysia. However, Sentosa was previously known under darker names: examples are 
+Dead Island and Island of the Dead. Despite the tropical scenery, Sentosa has known widespread
+ murder, piracy, and death in its past. The island can be reached by a bridge connected 
+to the mainland of Singapore, alternatively a cable car can be ridden to reach the resort. 
+One of the main attractions is the Merlion statue, which spouts out water from the mouth. Prior to
+2007, Sentosa used to host the "Magical Sentosa" show, a multimedia nighttime show hosted
+at the Sentosa Musical Fountain, with a clever use of lights, fire and projections on water. The show
+starred Mr Whamsey, a conductor of this magical fountain, and Kiki, the mischievous monkey of
+Sentosa. </p>
+<p> <img src="aboutsentosa_mainbanner.jpg" style="width:650px;height:260px"> </p>
+<h1> Tokyo, Japan</h1>
+Tokyo is the capital of Japan and the most populous city. 
+It generally gets hot humid summers with generally mild winters. Public transportation is 
+dominated by an extensive network of clean and efficient subways and trains. There are many 
+different festivals, museums and theaters for performing arts. As a popular tourist destination,
+the tourism Tokyo gets contributes to the economy. Several landmarks in Tokyo are the Tokyo Tower,
+Tokyo National Museum, and the Studio Ghibli anime center.
+<p> <img src="destination_tokyo_top.jpg" style="width:650px"></p>
+
+<h1><u><b>Works Cited</u></b></h1>
+<p>en.wikipedia.org</p>
+<p>https://peoplemakeglasgow.com/things-to-do/top-attractions/glasgow-cathedral</p>
+<p>http://www.esmadrid.com/en</p>
+<p>http://www.visitgreece.gr/en/main_cities/athens</p>
+<p>http://sentosa.com/</p>
+<p>http://www.japan-guide.com/e/e2164.html</p>
+
+</body>
+
+
+</html>
